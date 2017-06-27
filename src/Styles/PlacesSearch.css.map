@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,MAAO;EACL,cAAc,EAAE,UAAU",
+"sources": ["PlacesSearch.scss"],
+"names": [],
+"file": "PlacesSearch.css"
+}

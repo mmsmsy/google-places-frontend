@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import PlacesListItem from './PlacesListItem';
 import '../Styles/PlacesList.css';
 
@@ -7,17 +6,16 @@ class PlacesList extends Component {
   constructor() {
     super();
     this.state = {
-      places: [],
+      places: []
     };
   }
 
-  componentDidMount() {
-    axios('api/v1/listplaces')
-      .then(places => {
-        this.setState({
-          places: places.data
-        });
-      });
+  componentWillReceiveProps(nextProps) {
+    if(JSON.stringify(this.props.places) !== JSON.stringify(nextProps.places)) {
+      this.setState({
+        places: nextProps.places
+      })
+    }
   }
 
   render() {
@@ -26,7 +24,7 @@ class PlacesList extends Component {
     return (
       <div>
         <h1>This is my PlacesList component.</h1>
-        <p>And it's supposedly working</p>
+        <p>And it's supposedly listing</p>
         <div  className='places-list'>
           {placesListItems}
         </div>

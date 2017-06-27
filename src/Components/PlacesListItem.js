@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import jqueryui from 'jquery-ui'
 import PlaceType from './PlaceType';
 import PlacePhoto from './PlacePhoto';
 
@@ -17,15 +18,17 @@ class PlacesListItem extends Component {
       <div className='places-list-item'>
         <div 
           className='place-icon'
-          onClick={() => $(this.refs.types).children().slideToggle('fast')}
+          onClick={() => {
+            $(this.refs.types).slideToggle('fast');
+          }}
         >
           <img className='place-icon-image' src={place.icon} alt='Place' title="Show place's types" />
         </div>
         <div className='place-type' ref='types'>
           {types}
         </div>
-        <p className='place-name'>{place.name}</p>
-        <div className='place-photo'>
+        <p className='place-name' ref='name'>{place.name}</p>
+        <div className='place-photo' ref='photo'>
           {placePhoto}
         </div>
       </div>

@@ -18,20 +18,35 @@
   padding-top: 1rem;
   box-shadow: 0 1rem 1rem gray;
   margin: 1rem auto;
+  position: relative;
 }
 .places-list-item * {
   overflow: hidden;
   margin: 0;
 }
+.place-type {
+  background: white;
+  display: none;
+  width: 100%;
+  padding: 1rem 0;
+  position: absolute;
+    bottom: 0;
+}
 .place-type-item {
   color: #24406a;
   font-weight: bold;
+  font-size: 0.8rem;
   list-style: none;
   text-transform: capitalize;
-  display: none;
 }
 .place-icon {
-  @include flex(1);
+  @include flex-basis(15%);
+  border-top: 0.1rem solid transparent;
+  @include transition(all 0.2s);
+}
+.place-icon:hover {
+  background: #336699 + 100;
+  border-top: 0.1rem solid #336699;
 }
 .place-icon-image {
   height: 100%;
