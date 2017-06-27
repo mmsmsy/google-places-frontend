@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
+        <p>mmsmsy, google-places-api-application, june 2017, public</p>
       </div>
     </div>
   );

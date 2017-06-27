@@ -6,7 +6,8 @@ class PlacesApp extends Component {
   constructor() {
     super();
     this.state = {
-      places: []
+      places: [],
+      currentLocation: ''
     }
   }
 
@@ -16,12 +17,26 @@ class PlacesApp extends Component {
     this.setState({places: places});
   }
 
+  handleNewSearch = (newPlaces) => {
+    this.setState({places: newPlaces})
+  }
+
+  handleUpdateLocation = (newLocation) => {
+    this.setState({currentLocation: newLocation});
+  }
+
   render() {
     return (
       <div>
-        <h1>Main PlacesApp Component</h1>
-        <PlacesSearch nextPlaces={this.handleNextPlaces} />
-        <PlacesList places={this.state.places} />
+        <PlacesSearch
+          nextPlaces={this.handleNextPlaces}
+          newSearch={this.handleNewSearch}
+          updateLocation={this.handleUpdateLocation}
+        />
+        <PlacesList
+          places={this.state.places}
+          currentLocation={this.state.currentLocation}
+        />
       </div>
     );
   }

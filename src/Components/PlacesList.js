@@ -19,12 +19,11 @@ class PlacesList extends Component {
   }
 
   render() {
-    const placesListItems = this.state.places.map(place => <PlacesListItem key={place.id} place={place} />);
+    console.log(this.props.places);
+    const placesListItems = this.state.places.map(place => <PlacesListItem key={place.id} place={place} currentLocation={this.props.currentLocation} />);
 
     return (
       <div>
-        <h1>This is my PlacesList component.</h1>
-        <p>And it's supposedly listing</p>
         <div  className='places-list'>
           {placesListItems}
         </div>
