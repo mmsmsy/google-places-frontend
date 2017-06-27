@@ -1,0 +1,56 @@
+@import 'mixins.scss';
+
+.places-list {
+  @include display-flex();
+  @include flex-direction();
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
+  box-sizing: border-box;
+}
+.places-list-item {
+  text-align: center;
+  @include display-flex();
+  @include flex-basis(9rem);
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  height: 12rem;
+  overflow: hidden;
+  padding-top: 1rem;
+  box-shadow: 0 1rem 1rem gray;
+  margin: 1rem auto;
+}
+.places-list-item * {
+  overflow: hidden;
+  margin: 0;
+}
+.place-type-item {
+  color: #24406a;
+  font-weight: bold;
+  list-style: none;
+  text-transform: capitalize;
+  display: none;
+}
+.place-icon {
+  @include flex(1);
+}
+.place-icon-image {
+  height: 100%;
+}
+.place-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  @include display-flex();
+  @include flex(2);
+  @include flex-direction(column);
+  @include justify-content(center);
+  padding: 0 1rem;
+}
+.place-photo {
+  @include align-items(flex-end);
+  @include display-flex();
+  @include flex(3);
+}
+.place-photo-image {
+  width: 100%;
+}
