@@ -19,7 +19,8 @@
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  opacity: 0.1; }
 
 .places-list-item {
   text-align: center;
@@ -133,5 +134,27 @@
 
 .place-photo-image {
   width: 100%; }
+
+.loading {
+  opacity: 0;
+  padding: 5rem 0;
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #72B095 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #72B095));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #72B095 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #72B095 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #72B095 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, white 0%, #72B095 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  color: white;
+  text-align: center; }
 
 /*# sourceMappingURL=PlacesList.css.map */

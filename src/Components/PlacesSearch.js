@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import $ from 'jquery';
 import '../Styles/PlacesSearch.css';
 
 class PlacesSearch extends Component {
@@ -59,8 +60,10 @@ class PlacesSearch extends Component {
   }
 
   updatePlaces = (loadMore = null) => {
+    $('.places-list').fadeTo('slow', 0.1);
     if (!this.state.onLoadResults && !this.state.nextPageToken) {
-      alert('No more results available');
+      $('.loading').fadeTo(2000, 1);
+      $('.places-list').fadeTo('slow', 1);
       return;
     }
     axios.get(this.buildQueryString(loadMore))
@@ -68,21 +71,26 @@ class PlacesSearch extends Component {
         this.setState({
           newPlaces: res.data.results,
           nextPageToken: res.data.nextPageToken,
-          onLoadResults: false
+          onLoadResults: false,
         }, () => {
           this.props.nextPlaces(this.state.newPlaces);
           this.props.updateLocation(this.props.location);
+          
+          $('.places-list').fadeTo('slow', 1);
+          setTimeout(() => { $(window).on('scroll', this.handleScroll); }, 5000);
         });
       });
   }
 
   componentDidMount() {
     this.updatePlaces();
+    $(window).on('scroll', this.handleScroll);
   }
 
   handleSubmit = (event) => {
     if (this.refs.keyword.value === '') alert ('All fields are required.');
     else {
+      $('.places-list').fadeTo('slow', 0.1);
       this.setState({
         searchParams: {
           location: this.props.location,
@@ -95,15 +103,29 @@ class PlacesSearch extends Component {
           .then(res => {
             this.setState({
               newPlaces: res.data.results,
-              nextPageToken: res.data.nextPageToken
+              nextPageToken: res.data.nextPageToken,
+              onLoadResults: true,
             }, () => {
               this.props.newSearch(this.state.newPlaces);
+              this.props.updateLocation(this.props.location);
+              
+              $('.places-list').fadeTo('slow', 1);
+              $('.loading').fadeOut();
+              $(window).on('scroll', this.handleScroll);
             });
           });
       });
     }
     event.preventDefault();
   }
+
+  handleScroll = () => {
+    if($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
+      $(window).off('scroll', this.handleScroll);
+      console.log('loading more');
+      this.updatePlaces('Load more');
+    }
+  } 
 
   render() {
     const typeOptions = this.state.types.map(type => {
@@ -113,7 +135,6 @@ class PlacesSearch extends Component {
 
     return (
       <div>
-        <button onClick={() => this.updatePlaces('Load more')}>Load more</button>
         <form onSubmit={this.handleSubmit}>
           <label>
             <input type='text' ref='keyword' placeholder="Type in what You're looking for"></input>

@@ -6,6 +6,7 @@
   @include justify-content(space-between);
   @include flex-wrap(wrap);
   box-sizing: border-box;
+  opacity: 0.1;
 }
 .places-list-item {
   text-align: center;
@@ -66,4 +67,11 @@
 }
 .place-photo-image {
   width: 100%;
+}
+.loading {
+  opacity: 0;
+  padding: 5rem 0;
+  @include linear-gradient(white, #72B095);
+  color: white;
+  text-align: center;
 }
