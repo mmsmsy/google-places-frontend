@@ -77,7 +77,7 @@ class PlacesSearch extends Component {
           this.props.updateLocation(this.props.location);
           
           $('.places-list').fadeTo('slow', 1);
-          setTimeout(() => { $(window).on('scroll', this.handleScroll); }, 5000);
+          $(window).on('scroll', this.handleScroll);
         });
       });
   }

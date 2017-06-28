@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import PlaceType from './PlaceType';
 import PlacePhoto from './PlacePhoto';
 
 class PlacesListItem extends Component {
@@ -32,7 +31,6 @@ class PlacesListItem extends Component {
 
   render() {
     const place = this.props.place;
-    const types = place.types.map(type => <PlaceType type={type} key={type} />);
 
     let placePhoto;
     place.photos ?
@@ -52,13 +50,14 @@ class PlacesListItem extends Component {
         <div 
           className='place-icon'
           onClick={() => {
-            $(this.refs.types).slideToggle('fast');
+            $(this.refs.info).slideToggle('fast');
           }}
         >
           <img className='place-icon-image' src={place.icon} alt='Place' title="Show place's types" />
         </div>
-        <div className='place-type' ref='types'>
-          {types}
+        <div className='place-info' ref='info'>
+          <li className='place-info-item'>{place.vicinity}</li>
+          <li className='place-info-item'>{place.rating} ☆ </li>
         </div>
         <p className='place-name' ref='name'>{place.name}</p>
         <div className='place-photo' ref='photo'>

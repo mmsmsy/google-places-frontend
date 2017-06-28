@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import PlacesListItem from './PlacesListItem';
 import '../Styles/PlacesList.css';
 
