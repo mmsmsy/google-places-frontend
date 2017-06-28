@@ -9,8 +9,12 @@ class PlacePhoto extends Component {
     };
   }
 
-  fetchPhoto = (reference) => {
-    axios(`api/v1/getphoto/${reference}`)
+  fetchPhoto = (reference, maxWidth) => {
+    const url = 'api/v1/getphoto'
+      + '?maxwidth=' + maxWidth
+      + '&reference=' + reference;
+
+    axios(url)
       .then(res => {
         this.setState({
           photoUrl: res.data
@@ -20,7 +24,7 @@ class PlacePhoto extends Component {
 
   componentDidMount() {
     this.props.reference ?
-    this.fetchPhoto(this.props.reference) :
+    this.fetchPhoto(this.props.reference, this.props.maxWidth) :
     this.setState({photoUrl: 'https://shop.purgatoryresort.com/bundles/spotliowebappfront/purgatoryresort/images/photo_not_available.jpg'});
   }
 

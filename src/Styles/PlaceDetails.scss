@@ -1,0 +1,31 @@
+@import 'mixins.scss';
+
+.places-details {
+  @include display-flex();
+  @include flex-direction(column);
+}
+
+.places-details-info {
+  @include display-flex();
+  @include flex-direction(column);
+  margin: 0;
+
+  img {
+    margin: 0;
+  }
+}
+
+.place-details-info-data {
+  @include display-flex();
+  @include flex-direction(column);
+  padding: 0 2rem;
+  box-shadow: 0 0.01rem 0.2rem gray, 0 -0.01rem 0.2rem #1F7872;
+  margin: 0;
+  background: #72B095;
+
+  h2,
+  p {
+    color: white;
+    font-weight: normal;
+  }
+}

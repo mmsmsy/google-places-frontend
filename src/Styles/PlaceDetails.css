@@ -1,0 +1,51 @@
+.places-details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.places-details-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0; }
+  .places-details-info img {
+    margin: 0; }
+
+.place-details-info-data {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 2rem;
+  box-shadow: 0 0.01rem 0.2rem gray, 0 -0.01rem 0.2rem #1F7872;
+  margin: 0;
+  background: #72B095; }
+  .place-details-info-data h2,
+  .place-details-info-data p {
+    color: white;
+    font-weight: normal; }
+
+/*# sourceMappingURL=PlaceDetails.css.map */

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import PlacePhoto from './PlacePhoto';
+import { StarRating } from './SharedModules.js';
 
 class PlacesListItem extends Component {
   getDistanceInKm = (lat1,lon1,lat2,lon2) => {
@@ -31,10 +33,9 @@ class PlacesListItem extends Component {
 
   render() {
     const place = this.props.place;
-
     let placePhoto;
     place.photos ?
-    placePhoto = <PlacePhoto reference={place.photos[0].photo_reference} /> :
+    placePhoto = <PlacePhoto reference={place.photos[0].photo_reference} maxWidth='400'/> :
     placePhoto = <PlacePhoto />;
 
     let placeCoordinates = [];
@@ -43,7 +44,7 @@ class PlacesListItem extends Component {
     const searchCoordinates = this.props.currentLocation.split(',');
 
     let placeDistance = this.getDistanceInKm(placeCoordinates[0],placeCoordinates[1],searchCoordinates[0],searchCoordinates[1]);
-    placeDistance = this.round(placeDistance, 2) + 'km'
+    placeDistance = this.round(placeDistance, 2) + 'km';
 
     return (
       <div className='places-list-item'>
@@ -53,13 +54,13 @@ class PlacesListItem extends Component {
             $(this.refs.info).slideToggle('fast');
           }}
         >
-          <img className='place-icon-image' src={place.icon} alt='Place' title="Show place's types" />
+          <img className='place-icon-image' src={place.icon} alt='Place' title="Show basic info about this place" />
         </div>
         <div className='place-info' ref='info'>
           <li className='place-info-item'>{place.vicinity}</li>
-          <li className='place-info-item'>{place.rating} ☆ </li>
+          <li className='place-info-item'><StarRating rating={place.rating} /></li>
         </div>
-        <p className='place-name' ref='name'>{place.name}</p>
+        <Link to={`/placedetails/${place.place_id}`} ><p className='place-name' ref='name'>{place.name}</p></Link>
         <div className='place-photo' ref='photo'>
           {placePhoto}
         </div>

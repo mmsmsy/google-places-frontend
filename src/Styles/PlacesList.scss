@@ -74,6 +74,10 @@
   opacity: 0;
   padding: 5rem 0;
   @include linear-gradient(white, #72B095);
-  color: white;
+  color: #1F7872;
   text-align: center;
+
+  h1 {
+    font-size: 1.3rem;
+  }
 }

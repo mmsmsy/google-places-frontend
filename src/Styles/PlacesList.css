@@ -156,7 +156,9 @@
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
-  color: white;
+  color: #1F7872;
   text-align: center; }
+  .loading h1 {
+    font-size: 1.3rem; }
 
 /*# sourceMappingURL=PlacesList.css.map */
