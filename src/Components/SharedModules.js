@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import Star from 'react-icons/lib/md/star';
-import StarHalf from 'react-icons/lib/md/star-half';
-import StarOutline from 'react-icons/lib/md/star-outline';
+import StarIcon from 'react-icons/lib/md/star';
+import StarHalfIcon from 'react-icons/lib/md/star-half';
+import StarOutlineIcon from 'react-icons/lib/md/star-outline';
 
 class StarRating extends Component {
   render() {
+    if (!this.props.rating) return <div>No rating</div>;
+
     let ratingArray = [];
     let i = 1;
     const rating = this.props.rating;
@@ -20,15 +22,15 @@ class StarRating extends Component {
     const endResult = ratingArray.map((star, index) => {
       let endStar;
 
-      if (star === 1) endStar = <Star key={index} />;
-      else if (star === 0.5) endStar = <StarHalf key={index} />;
-      else if (star === 0) endStar = <StarOutline key={index} />;
+      if (star === 1) endStar = <StarIcon className='icon' key={index} />;
+      else if (star === 0.5) endStar = <StarHalfIcon className='icon' key={index} />;
+      else if (star === 0) endStar = <StarOutlineIcon className='icon' key={index} />;
 
       return endStar;
     });
 
     return (
-      <span>{rating} {endResult}</span>
+      <span className='star-rating'>{rating} {endResult}</span>
     );
   }
 }

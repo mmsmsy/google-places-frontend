@@ -60,8 +60,8 @@ class PlacesListItem extends Component {
           <li className='place-info-item'>{place.vicinity}</li>
           <li className='place-info-item'><StarRating rating={place.rating} /></li>
         </div>
-        <Link to={`/placedetails/${place.place_id}`} ><p className='place-name' ref='name'>{place.name}</p></Link>
-        <div className='place-photo' ref='photo'>
+        <Link to={`/placedetails/${place.place_id}`} className='place-name'><p>{place.name}</p></Link>
+        <div className='place-photo'>
           {placePhoto}
         </div>
         <div className='place-distance'>

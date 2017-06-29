@@ -1,0 +1,36 @@
+@import 'mixins.scss';
+
+.place-details {
+  .star-rating {
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+  .google-map {
+    width: 100%;
+    height: 20rem;
+  }
+  
+  $markerWidth: 49px;
+  $markerHeight: 64px;
+
+  $originX: $markerWidth * .5;
+  $originY: $markerHeight;
+
+  .marker {
+    background-image: url('./images/mapIcon.svg');
+    position: absolute;
+    cursor: pointer;
+    width: $markerWidth;
+    height: $markerHeight;
+    top: -$originY;
+    left: -$originX;
+    transform-origin: $originX $originY;
+    margin: 0;
+    padding: 0;
+  }
+}

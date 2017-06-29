@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlacesSearch from './PlacesSearch';
 import PlacesList from './PlacesList';
+import '../Styles/PlacesApp.css';
 
 class PlacesApp extends Component {
   constructor() {

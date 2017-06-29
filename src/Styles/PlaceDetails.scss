@@ -1,5 +1,10 @@
 @import 'mixins.scss';
 
+.place-loading {
+  color: #1F7872;
+  font-size: 3rem;
+  text-align: center;
+}
 .places-details {
   @include display-flex();
   @include flex-direction(column);
@@ -18,7 +23,7 @@
 .place-details-info-data {
   @include display-flex();
   @include flex-direction(column);
-  padding: 0 2rem;
+  padding: 1rem 0;
   box-shadow: 0 0.01rem 0.2rem gray, 0 -0.01rem 0.2rem #1F7872;
   margin: 0;
   background: #72B095;
@@ -27,5 +32,60 @@
   p {
     color: white;
     font-weight: normal;
+  }
+  h2 {
+    margin: 0.8rem 1rem;
+  }
+  p {
+    margin: 0.5rem 2rem;
+  }
+  img {
+    height: 2rem;
+    margin: 0 1rem;
+  }
+}
+.place-details-category {
+  @include display-flex();
+  @include flex-direction();
+  @include justify-content(space-between);
+  @include align-items(center);
+  list-style: none;
+
+  ul {
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+      border-right: 0.01rem solid white;
+      padding: 0 0.3rem;
+      color: white;
+      font-weight: bold;
+    }
+    li:last-child {
+      border-right: 0;
+    }
+  }
+}
+.place-details-link {
+  @include display-flex();
+  @include flex-direction();
+  @include justify-content(center);
+  padding: 2rem;
+  background: white;
+
+  a:link,
+  a:visited {
+    @include display-flex();
+    @include flex-direction(column);
+    @include align-items(center);
+    margin: 0 auto;
+    color: #1F7872;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .icon {
+    font-size: 2rem;
   }
 }

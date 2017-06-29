@@ -88,10 +88,13 @@
 .place-icon-image {
   height: 100%; }
 
-.place-name {
-  font-size: 0.9rem;
+a.place-name:link,
+a.place-name:visited {
+  color: #24406a;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -114,7 +117,15 @@
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+a.place-name:active,
+a.place-name:hover {
+  color: #88a4ce; }
 
 .place-photo {
   -webkit-box-align: end;
