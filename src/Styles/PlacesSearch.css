@@ -15,7 +15,7 @@ form {
   flex-direction: column;
   width: 100%;
   padding: 1rem;
-  box-shadow: 0 0.01rem 0.2rem gray, 0 -0.01rem 0.2rem #1F7872;
+  box-shadow: 0 0.01rem 0.2rem gray;
   margin-bottom: 2rem;
   background: #72B095; }
 

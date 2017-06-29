@@ -3,6 +3,13 @@ import StarIcon from 'react-icons/lib/md/star';
 import StarHalfIcon from 'react-icons/lib/md/star-half';
 import StarOutlineIcon from 'react-icons/lib/md/star-outline';
 
+
+class MapMarker extends Component {
+  render() {
+    return <div className='marker'></div>;
+  }
+}
+
 class StarRating extends Component {
   render() {
     if (!this.props.rating) return <div>No rating</div>;
@@ -35,4 +42,4 @@ class StarRating extends Component {
   }
 }
 
-export { StarRating }
+export { StarRating, MapMarker }

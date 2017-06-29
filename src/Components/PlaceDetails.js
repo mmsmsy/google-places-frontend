@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PlacePhoto from './PlacePhoto';
-import { StarRating } from './SharedModules.js';
+import { StarRating, MapMarker } from './SharedModules.js';
 import PhoneIcon from 'react-icons/lib/md/local-phone';
 import WebsiteIcon from 'react-icons/lib/md/language';
 import LocationIcon from 'react-icons/lib/md/location-on';
 import GoogleMap from 'google-map-react';
 import '../Styles/PlaceDetails.css';
-
-class MapMarker extends Component {
-  render() {
-    return <div className='marker'></div>;
-  }
-}
 
 class PlaceDetails extends Component {
   constructor() {
@@ -37,12 +31,7 @@ class PlaceDetails extends Component {
   }
 
   render() {
-    console.log(this.state.place);
-    if (this.state.loading || !this.state.place) {
-      return (
-        <p className="place-loading"> Loading ...</p>
-      );
-    }
+    if (this.state.loading || !this.state.place) return <p className="place-loading"> Loading ...</p>;
 
     const place = this.state.place;
     
@@ -70,8 +59,11 @@ class PlaceDetails extends Component {
             </div>
           </div>
           <div className='google-map'>
-            <GoogleMap 
-              defaultCenter={place.geometry.location}
+            <GoogleMap
+              bootstrapURLKeys={{
+                key: "AIzaSyBZ5yFz157dCNy1484TLbab7_7iA6JqkXU"
+              }}
+              center={place.geometry.location}
               defaultZoom={13}
             >
               <MapMarker lat={place.geometry.location.lat} lng={place.geometry.location.lng} text='blablalba' />
@@ -113,7 +105,10 @@ class PlaceDetails extends Component {
         </div>
         <div className='google-map'>
           <GoogleMap 
-            defaultCenter={place.geometry.location}
+            bootstrapURLKeys={{
+              key: "AIzaSyBZ5yFz157dCNy1484TLbab7_7iA6JqkXU"
+            }}
+            center={place.geometry.location}
             defaultZoom={13}
           >
             <MapMarker lat={place.geometry.location.lat} lng={place.geometry.location.lng} text='blablalba' />

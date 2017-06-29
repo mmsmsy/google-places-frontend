@@ -14,23 +14,29 @@
     width: 100%;
     height: 20rem;
   }
-  
-  $markerWidth: 49px;
-  $markerHeight: 64px;
+}
+$markerWidth: 49px;
+$markerHeight: 64px;
 
-  $originX: $markerWidth * .5;
-  $originY: $markerHeight;
+$originX: $markerWidth * .5;
+$originY: $markerHeight;
 
-  .marker {
-    background-image: url('./images/mapIcon.svg');
-    position: absolute;
-    cursor: pointer;
-    width: $markerWidth;
-    height: $markerHeight;
-    top: -$originY;
-    left: -$originX;
-    transform-origin: $originX $originY;
-    margin: 0;
-    padding: 0;
+.marker {
+  background-image: url('./images/mapIcon.svg');
+  position: absolute;
+  cursor: pointer;
+  width: $markerWidth;
+  height: $markerHeight;
+  top: -$originY;
+  left: -$originX;
+  transform-origin: $originX $originY;
+  margin: 0;
+  padding: 0;
+}
+.places-search {
+  .google-map {
+    width: 100%;
+    height: 20rem;
+    box-shadow: 0 -0.1rem 0.2rem #1F7872;
   }
 }

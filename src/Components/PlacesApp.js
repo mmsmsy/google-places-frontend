@@ -27,6 +27,7 @@ class PlacesApp extends Component {
   }
 
   render() {
+    console.log(this.state.currentLocation);
     return (
       <div>
         <PlacesSearch

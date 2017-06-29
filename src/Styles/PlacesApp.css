@@ -7,7 +7,8 @@
 .place-details .google-map {
   width: 100%;
   height: 20rem; }
-.place-details .marker {
+
+.marker {
   background-image: url("./images/mapIcon.svg");
   position: absolute;
   cursor: pointer;
@@ -18,5 +19,10 @@
   transform-origin: 24.5px 64px;
   margin: 0;
   padding: 0; }
+
+.places-search .google-map {
+  width: 100%;
+  height: 20rem;
+  box-shadow: 0 -0.1rem 0.2rem #1F7872; }
 
 /*# sourceMappingURL=PlacesApp.css.map */
