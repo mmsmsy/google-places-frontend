@@ -27,9 +27,8 @@ class PlacesApp extends Component {
   }
 
   render() {
-    console.log(this.state.currentLocation);
     return (
-      <div>
+      <div className='places-app'>
         <PlacesSearch
           nextPlaces={this.handleNextPlaces}
           newSearch={this.handleNewSearch}

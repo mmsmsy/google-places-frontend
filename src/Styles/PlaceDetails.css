@@ -3,7 +3,7 @@
   font-size: 3rem;
   text-align: center; }
 
-.places-details {
+.place-details {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -15,8 +15,17 @@
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column; }
+  .place-details .star-rating {
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: bold; }
+    .place-details .star-rating .icon {
+      font-size: 1.5rem; }
+  .place-details .google-map {
+    width: 100%;
+    height: 20rem; }
 
-.places-details-info {
+.place-details-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -29,7 +38,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0; }
-  .places-details-info img {
+  .place-details-info img {
     margin: 0; }
 
 .place-details-info-data {
@@ -56,7 +65,9 @@
     margin: 0.8rem 1rem; }
   .place-details-info-data p {
     margin: 0.5rem 2rem; }
-  .place-details-info-data img {
+  .place-details-info-data span {
+    margin-left: 1rem; }
+  .place-details-info-data .icon {
     height: 2rem;
     margin: 0 1rem; }
 
@@ -116,6 +127,12 @@
   background: white; }
   .place-details-link a:link,
   .place-details-link a:visited {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -135,9 +152,26 @@
     margin: 0 auto;
     color: #1F7872;
     font-weight: bold;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase; }
   .place-details-link .icon {
     font-size: 2rem; }
+
+@media only screen and (min-width: 1000px) {
+  .place-details-info {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0; }
+    .place-details-info img {
+      width: 50%;
+      height: 50%;
+      margin: 0; }
+    .place-details-info .place-details-info-data {
+      width: 50%; } }
 
 /*# sourceMappingURL=PlaceDetails.css.map */

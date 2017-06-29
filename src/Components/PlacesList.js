@@ -19,7 +19,6 @@ class PlacesList extends Component {
   }
 
   render() {
-    console.log(this.props.currentLocation)
     const placesListItems = this.state.places.map(place => <PlacesListItem key={place.id} place={place} currentLocation={this.props.currentLocation} />);
 
     return (

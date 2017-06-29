@@ -1,3 +1,8 @@
+.places-search .google-map {
+  width: 100%;
+  height: 20rem;
+  box-shadow: 0 -0.1rem 0.2rem #1F7872; }
+
 form {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

@@ -1,20 +1,10 @@
 @import 'mixins.scss';
 
-.place-details {
-  .star-rating {
-    height: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-
-    .icon {
-      font-size: 1.5rem;
-    }
-  }
-  .google-map {
-    width: 100%;
-    height: 20rem;
-  }
+.places-app {
+  @include display-flex();
+  @include flex-direction(column);
 }
+
 $markerWidth: 49px;
 $markerHeight: 64px;
 
@@ -33,10 +23,6 @@ $originY: $markerHeight;
   margin: 0;
   padding: 0;
 }
-.places-search {
-  .google-map {
-    width: 100%;
-    height: 20rem;
-    box-shadow: 0 -0.1rem 0.2rem #1F7872;
-  }
+.star-rating {
+  white-space: nowrap;
 }

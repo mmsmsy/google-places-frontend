@@ -4,10 +4,8 @@ import StarHalfIcon from 'react-icons/lib/md/star-half';
 import StarOutlineIcon from 'react-icons/lib/md/star-outline';
 
 
-class MapMarker extends Component {
-  render() {
-    return <div className='marker'></div>;
-  }
+function MapMarker() {
+  return <div className='marker'></div>;
 }
 
 class StarRating extends Component {

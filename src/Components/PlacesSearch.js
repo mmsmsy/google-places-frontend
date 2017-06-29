@@ -9,7 +9,6 @@ class PlacesSearch extends Component {
   constructor() {
     super();
     this.state = {
-      types: [],
       searchParams: {
         location: '',
         radius: null,
@@ -24,7 +23,6 @@ class PlacesSearch extends Component {
 
   static defaultProps = {
     types: ['','accounting','airport','amusement_park','aquarium','art_gallery','atm','bakery','bank','bar','beauty_salon','bicycle_store','book_store','bowling_alley','bus_station','cafe','campground','car_dealer','car_rental','car_repair','car_wash','casino','cemetery','church','city_hall','clothing_store','convenience_store','courthouse','dentist','department_store','doctor','electrician','electronics_store','embassy','fire_station','florist','funeral_home','furniture_store','gas_station','gym','hair_care','hardware_store','hindu_temple','home_goods_store','hospital','insurance_agency','jewelry_store','laundry','lawyer','library','liquor_store','local_government_office','locksmith','lodging','meal_delivery','meal_takeaway','mosque','movie_rental','movie_theater','moving_company','museum','night_club','painter','park','parking','pet_store','pharmacy','physiotherapist','plumber','police','post_office','real_estate_agency','restaurant','roofing_contractor','rv_park','school','shoe_store','shopping_mall','spa','stadium','storage','store','subway_station','synagogue','taxi_stand','train_station','transit_station','travel_agency','university','veterinary_care','zoo'],
-    location: '30.042146,19.995291',
     radius: 50000,
     type: '',
     keyword: ''
@@ -32,7 +30,6 @@ class PlacesSearch extends Component {
 
   componentWillMount() {
     this.getLocation();
-    console.log(this.state.searchParams);
   }
 
   getLocation = () => {
@@ -55,7 +52,6 @@ class PlacesSearch extends Component {
           searchParams.keyword = keyword;
 
           this.setState({
-            types: this.props.types,
             searchParams: searchParams
           }, () => {
             this.updatePlaces();
@@ -141,19 +137,20 @@ class PlacesSearch extends Component {
   handleScroll = () => {
     if($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
       $(window).off('scroll', this.handleScroll);
-      console.log('loading more');
       this.updatePlaces('Load more');
     }
   } 
 
   render() {
+    console.log(this.state.searchParams, this.state.newPlaces);
     if (!this.state.searchParams.location) return <p className="place-loading"> Loading ...</p>;
+
     const mapLocationArray = this.state.searchParams.location.split(',');
     const mapLocation = {};
     mapLocation.lat = parseFloat(mapLocationArray[0]);
     mapLocation.lng = parseFloat(mapLocationArray[1]);
 
-    const typeOptions = this.state.types.map(type => {
+    const typeOptions = this.props.types.map(type => {
       const typeDisplayed = type.replace(/_/g,' ');
       return <option key={type} value={type}>{typeDisplayed}</option>;
     });
