@@ -3,9 +3,9 @@
 
 ### App developed on Windows using Unix CLI emulator (usually work done on Ubuntu)
 ### To create a local copy
-Copy the repository except for node_modules and build folders
-yarn install
-yarn start
+##### Copy the repository except for node_modules and build folders
+##### yarn install
+##### yarn start
 #### The development server will start on localhost:3000
 #### To make the frontend requests from Google Geolocation and Google Maps work from your localhost you need to swap Google API keys
 
